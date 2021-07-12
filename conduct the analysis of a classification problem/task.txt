@@ -1,0 +1,37 @@
+The goal of this assignment is to analyze a real-life dataset from scratch. 
+
+We've selected two datasets and assigned them randomly
+
+Cancer(http://archive.ics.uci.edu/ml/datasets/Cervical+cancer+%28Risk+Factors%29). Predict cervical cancer using a set of demographic characteristics and medical tests. Remark: do not expect high prediction quality. 
+
+Drugs(http://archive.ics.uci.edu/ml/datasets/Drug+consumption+%28quantified%29). Predict drug consumption using a set of demographic characteristics and five personality measurements(https://en.wikipedia.org/wiki/Big_Five_personality_traits).  Remark: don't forget to decode at least some key features (see the encoding described in the documentation).
+
+Tasks & grading
+
+1. Preprocessing
+
+Read the data using pandas (1 point).
+In both datasets, we have several columns that can be used to design target; see details in the documentation. Please, select a reasonable binary target combining these columns and motivate your selection. You can also select a couple of targets to analyze & compare the performance of ML models within the next steps. Important: don't forget to drop columns directly associated with the selected target (3 points).
+2. Exploratory analysis
+
+Generate three hypotheses related to your problem and try to confirm or deny them using exploratory visualization. Please, try to use different types of plots if possible. (6 points, 2 points for each hypothesis. If you use only one type of plots for all hypotheses -- no more than 4 points for this part)
+3. Metrics & Validation
+
+Please, analyze the balance of the target variable (or variables if you decided to work with two output variables). Which quality metrics are suitable for your task? Why? (2 points).
+Split data into train and test sets using train_test_split. Important: if your problem is imbalanced, use stratify parameter.  The test set shouldn't be used for models fitting or selection of the optimal set of parameters (1 point).
+4. ML models
+
+Propose appropriate preprocessing steps for your model, for example,
+use SimpleImputer() if you have missing variables;
+use OneHotEncoder() if you have categorical variables;
+use StandardScaler() if you plan to work with a linear method.
+
+Implement a pipeline to combine the designed preprocessing steps with LogisticRegression (2 points).
+Find a good combination of parameters(penalty type and regularization coefficient C) via cross-validation. Please use the stratified version of KFold if your dataset isn't balanced, see StratifiedKFold() (4 points).
+Refit model with optimal parameters on the whole train set and check the quality of prediction on the test set (1 point).
+Repeat the last step with any tree-based model (Random Forest, GradientBoosting, XGBoost or CatBoost). Use GridSearchCV to identify the optimal set of parameters (at least, try to different reasonable values of  n_estimators and max_depth). Check the quality on the test set  (4 points).
+Plot the dependency of GridSearchCV score on max_depth (see the description (https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) of cv_results_ attribute). (2 points).
+In addition to the already calculated metrics, please draw Precision-Recall curves (https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html#sphx-glr-auto-examples-model-selection-plot-precision-recall-py) for both linear and tree-based models. Compare models using PR-curves. (2 points).  To be discussed during lecture 8.
+5. Conclusion
+
+Write a summary of your work (2 points).

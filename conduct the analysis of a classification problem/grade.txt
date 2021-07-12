@@ -1,0 +1,4 @@
+Grade: 25 (30 pts possible)
+
+Comments:
+- Categorical features like ethinicity and country should be preprocessed, not treated like floats. - ROC curve should be on probabilities (predict_proba), not on predictions.
