@@ -1,0 +1,4 @@
+Grade: 19 (20 pts possible)
+
+Comments:
+Missing methods, dividing score by 10^n.

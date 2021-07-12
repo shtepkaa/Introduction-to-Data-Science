@@ -1,0 +1,5 @@
+In this assignment, you will explore the House Prices data. You will perform initial cleaning, plot some charts and train regression models to predict the price of a house. 
+Additionally, you will select the best values of hyperparameters using cross-validation.
+
+For this assignment, you will be submitting a Jupyter notebook. We provide an initial notebook (hw1.ipynb) 
+with task statements where you need to fill in the blank cells with your code. 
